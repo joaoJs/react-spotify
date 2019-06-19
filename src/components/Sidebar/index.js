@@ -19,7 +19,7 @@ const Sidebar = () => (
       <Nav>
         <li>
           <a href="">
-            <span>playlists</span>
+            <span>playlists </span>
           </a>
         </li>
         <li>
