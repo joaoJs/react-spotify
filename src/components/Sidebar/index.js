@@ -54,9 +54,6 @@ const Sidebar = () => (
         <li>
           <a href="">Músicas</a>
         </li>
-        <li>
-          <a href="">Músicas</a>
-        </li>
       </Nav>
     </div>
     <NewPlaylist>Add playlist</NewPlaylist>
