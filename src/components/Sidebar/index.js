@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NewPlaylist, Container, Nav } from './styles'
+import { Link } from 'react-router-dom'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -21,7 +22,7 @@ class Sidebar extends Component {
         <div>
           <Nav main>
             <li>
-              <a href="">Link</a>
+              <Link to="/">Navegar</Link>
             </li>
             <li>
               <a href="">Link</a>
@@ -53,7 +54,7 @@ class Sidebar extends Component {
             </li>
             {this.props.playlists.data.map(playlist => (
               <li key={playlist.id}>
-                <a>{playlist.title}</a>
+                <Link to={`/playlists/${playlist.id}`}>{playlist.title}</Link>
               </li>
             ))}
           </Nav>

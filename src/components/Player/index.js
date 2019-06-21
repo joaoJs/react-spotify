@@ -8,7 +8,7 @@ import {
   Time,
   ProgressSlider
 } from './styles'
-import revolver from '../../assets/revolver.jpg'
+import cd from '../../assets/cd.jfif'
 import volume from '../../assets/volume.png'
 import Slider from 'rc-slider'
 import shuffle from '../../assets/shuffle.png'
@@ -21,10 +21,10 @@ import repeat from '../../assets/repeat.png'
 const Player = () => (
   <Container>
     <Current>
-      <img src={revolver} alt="Cover" />
+      <img src={cd} alt="Cover" />
       <div>
-        <span>Revolver</span>
-        <small>The Beatles</small>
+        <span>CD</span>
+        <small>Playlist</small>
       </div>
     </Current>
 

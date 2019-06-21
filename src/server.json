@@ -2,33 +2,27 @@
   "playlists": [
     {
       "id": 1,
-      "title": "playlistTitle",
-      "description": "playlistDescription",
-      "thumbnail": "playlistThumbnail"
+      "title": "playlist1",
+      "description": "Playlist No1",
+      "thumbnail": "https://flaticons.net/gd/makefg.php?i=icons/Gadgets/CD-02.png&r=255&g=255&b=255"
     },
     {
       "id": 2,
-      "title": "playlistTitle",
-      "description": "playlistDescription",
-      "thumbnail": "playlistThumbnail"
+      "title": "playlist2",
+      "description": "Playlist No2",
+      "thumbnail": "https://flaticons.net/gd/makefg.php?i=icons/Gadgets/CD-02.png&r=255&g=255&b=255"
     },
     {
       "id": 3,
-      "title": "playlistTitle",
-      "description": "playlistDescription",
-      "thumbnail": "playlistThumbnail"
+      "title": "playlist3",
+      "description": "Playlist No3",
+      "thumbnail": "https://flaticons.net/gd/makefg.php?i=icons/Gadgets/CD-02.png&r=255&g=255&b=255"
     },
     {
       "id": 4,
-      "title": "playlistTitle",
-      "description": "playlistDescription",
-      "thumbnail": "playlistThumbnail"
-    },
-    {
-      "id": 5,
-      "title": "playlistTitle",
-      "description": "playlistDescription",
-      "thumbnail": "playlistThumbnail"
+      "title": "playlist4",
+      "description": "Playlist No4",
+      "thumbnail": "https://flaticons.net/gd/makefg.php?i=icons/Gadgets/CD-02.png&r=255&g=255&b=255"
     }
   ]
 }
