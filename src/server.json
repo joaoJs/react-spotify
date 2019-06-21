@@ -1,0 +1,34 @@
+{
+  "playlists": [
+    {
+      "id": 1,
+      "title": "playlistTitle",
+      "description": "playlistDescription",
+      "thumbnail": "playlistThumbnail"
+    },
+    {
+      "id": 2,
+      "title": "playlistTitle",
+      "description": "playlistDescription",
+      "thumbnail": "playlistThumbnail"
+    },
+    {
+      "id": 3,
+      "title": "playlistTitle",
+      "description": "playlistDescription",
+      "thumbnail": "playlistThumbnail"
+    },
+    {
+      "id": 4,
+      "title": "playlistTitle",
+      "description": "playlistDescription",
+      "thumbnail": "playlistThumbnail"
+    },
+    {
+      "id": 5,
+      "title": "playlistTitle",
+      "description": "playlistDescription",
+      "thumbnail": "playlistThumbnail"
+    }
+  ]
+}
