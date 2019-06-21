@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Creators as PlaylistDetailActions } from '../../store/ducks/playlistDetails'
+import { Creators as PlayerActions } from '../../store/ducks/player'
 
 class Playlist extends Component {
   componentDidMount() {
@@ -38,7 +39,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators(PlaylistDetailActions, dispatch)
+  bindActionCreators({ ...PlaylistDetailActions, ...PlayerActions }, dispatch)
 
 export default connect(
   mapStateToProps,

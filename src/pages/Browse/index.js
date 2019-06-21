@@ -5,8 +5,7 @@ import { Container, Title, List, Playlist } from './styles'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Creators as PlaylistActions } from '../../store/ducks/playlists'
-
-import cd from '../../assets/cd.jfif'
+import { Link } from 'react-router-dom'
 
 class Browse extends Component {
   componentDidMount() {
@@ -20,8 +19,14 @@ class Browse extends Component {
 
         <List>
           {this.props.playlists.data.map(playlist => (
-            <Playlist key={playlist.id} to={`/playlists/${playlist.id}`}>
-              <img src={playlist.thumbnail} alt={playlist.title} />
+            <Playlist key={playlist.id}>
+              <Link to={`/playlists/${playlist.id}`}>
+                <img
+                  src={playlist.thumbnail}
+                  alt={playlist.title}
+                  to={`/playlists/${playlist.id}`}
+                />
+              </Link>
               <strong>{playlist.title}</strong>
             </Playlist>
           ))}

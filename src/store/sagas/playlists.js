@@ -2,8 +2,6 @@ import api from '../../services/api'
 import { call, put } from 'redux-saga/effects'
 import { Types as PlaylistsTypes } from '../ducks/playlists'
 
-import { Creators as PlaylistActions } from '../ducks/playlists'
-
 export function* getPlaylists() {
   try {
     const response = yield call(api.get, '/playlists')
