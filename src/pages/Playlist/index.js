@@ -4,8 +4,14 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Creators as PlaylistDetailActions } from '../../store/ducks/playlistDetails'
 import { Creators as PlayerActions } from '../../store/ducks/player'
+import { SongItem } from './styles'
 
 class Playlist extends Component {
+  state = {
+    selectedSong: null,
+    playing: false
+  }
+
   componentDidMount() {
     console.log('loading playlist component')
     this.loadPlaylistDetails()
@@ -29,13 +35,23 @@ class Playlist extends Component {
       <div>
         <p>Here</p>
         <h3>{this.props.playlistDetails.data.title}</h3>
+        <SongItem
+          key={1}
+          onClick={() => this.setState({ selectedSong: 1 })}
+          onDoubleClick={() => this.props.loadSong({})}
+          selected={this.state.selectedSong === 1}
+          playing={this.props.currentSong && this.state.selectedSong === 1}
+        >
+          <p>PlaySong</p>
+        </SongItem>
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  playlistDetails: state.playlistDetails
+  playlistDetails: state.playlistDetails,
+  currentSong: state.player.currentSong
 })
 
 const mapDispatchToProps = dispatch =>

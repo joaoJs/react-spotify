@@ -1,4 +1,4 @@
-import { status } from 'react-sound'
+import Sound from 'react-sound'
 import { tsExpressionWithTypeArguments } from '@babel/types'
 import { types } from '@babel/core'
 
@@ -17,7 +17,7 @@ export default function player(state = INITIAL_STATE, action) {
       return {
         ...state,
         currentSong: action.payload.song,
-        status: status.PLAYING
+        status: Sound.status.PLAYING
       }
     default:
       return state
@@ -26,7 +26,7 @@ export default function player(state = INITIAL_STATE, action) {
 
 export const Creators = {
   loadSong: song => ({
-    type: Types.SET,
+    type: Types.LOAD,
     payload: { song }
   })
 }

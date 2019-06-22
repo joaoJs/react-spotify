@@ -17,9 +17,21 @@ import pause from '../../assets/pause.png'
 import backward from '../../assets/backward.png'
 import forward from '../../assets/forward.png'
 import repeat from '../../assets/repeat.png'
+import Sound from 'react-sound'
+import { connect } from 'react-redux'
 
-const Player = () => (
+const Player = ({ player }) => (
+  // <Sound url="http://www.mp3classicalmusic.net/48Music/Shostakovich48/PrelFuga07.mp3" alt="cover"></Sound>
+
   <Container>
+    {!!player.currentSong && (
+      <Sound
+        url="http://www.mp3classicalmusic.net/48Music/Shostakovich48/PrelFuga07.mp3"
+        playStatus={player.status}
+        alt="Song"
+      />
+    )}
+
     <Current>
       <img src={cd} alt="Cover" />
       <div>
@@ -76,4 +88,8 @@ const Player = () => (
   </Container>
 )
 
-export default Player
+const mapStateToProps = state => ({
+  player: state.player
+})
+
+export default connect(mapStateToProps)(Player)
