@@ -24,5 +24,43 @@
       "description": "Playlist No4",
       "thumbnail": "https://flaticons.net/gd/makefg.php?i=icons/Gadgets/CD-02.png&r=255&g=255&b=255"
     }
+  ],
+  "songs": [
+    {
+      "id": 0,
+      "title": "Prelude and fugue A major",
+      "author": "Schostakovich",
+      "album": "Schostakovich: Preludes and Fugues",
+      "file": "http://www.mp3classicalmusic.net/48Music/Shostakovich48/PrelFuga07.mp3",
+      "thumbnail": "https://flaticons.net/gd/makefg.php?i=icons/Gadgets/CD-02.png&r=255&g=255&b=255",
+      "playlistId": 1
+    },
+    {
+      "id": 1,
+      "title": "English Suite 6: Gigue",
+      "author": "Bach",
+      "album": "Bach: English Suites",
+      "file": "http://www.mp3classicalmusic.net/48Music/Bachjs48/Suite%20inglese6-6.mp3",
+      "thumbnail": "https://flaticons.net/gd/makefg.php?i=icons/Gadgets/CD-02.png&r=255&g=255&b=255",
+      "playlistId": 2
+    },
+    {
+      "id": 2,
+      "title": "Impromptu 4",
+      "author": "Schubert",
+      "album": "Schubert: Impromptus",
+      "file": "http://www.mp3classicalmusic.net/48Music/Schubert48/Impromptu%20op142n4.mp3",
+      "thumbnail": "https://flaticons.net/gd/makefg.php?i=icons/Gadgets/CD-02.png&r=255&g=255&b=255",
+      "playlistId": 3
+    },
+    {
+      "id": 3,
+      "title": "Etude op.10 4",
+      "author": "Chopin",
+      "album": "Chopin: Etudes",
+      "file": "http://www.mp3classicalmusic.net/48Music/Chopin48/Studio10-04.mp3",
+      "thumbnail": "https://flaticons.net/gd/makefg.php?i=icons/Gadgets/CD-02.png&r=255&g=255&b=255",
+      "playlistId": 4
+    }
   ]
 }

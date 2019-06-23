@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import {
   Container,
   Current,
@@ -12,44 +12,54 @@ import cd from '../../assets/cd.jfif'
 import volume from '../../assets/volume.png'
 import Slider from 'rc-slider'
 import shuffle from '../../assets/shuffle.png'
-import play from '../../assets/play.png'
-import pause from '../../assets/pause.png'
+import playIcon from '../../assets/play.png'
+import pauseIcon from '../../assets/pause.png'
 import backward from '../../assets/backward.png'
 import forward from '../../assets/forward.png'
 import repeat from '../../assets/repeat.png'
 import Sound from 'react-sound'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { Creators as PlayerActions } from '../../store/ducks/player'
 
-const Player = ({ player }) => (
-  // <Sound url="http://www.mp3classicalmusic.net/48Music/Shostakovich48/PrelFuga07.mp3" alt="cover"></Sound>
-
+const Player = ({ player, play, pause }) => (
   <Container>
-    {!!player.currentSong && (
+    {!!player.currentSong && player.status === Sound.status.PLAYING && (
       <Sound
-        url="http://www.mp3classicalmusic.net/48Music/Shostakovich48/PrelFuga07.mp3"
+        url={player.currentSong.file}
         playStatus={player.status}
         alt="Song"
       />
     )}
 
-    <Current>
-      <img src={cd} alt="Cover" />
-      <div>
-        <span>CD</span>
-        <small>Playlist</small>
-      </div>
-    </Current>
+    {player.currentSong ? (
+      <Current>
+        <img src={cd} alt="Cover" />
+        <div>
+          <span>{player.currentSong.album}</span>
+          <small>{player.currentSong.title}</small>
+        </div>
+      </Current>
+    ) : (
+      <Current>
+        <img src={cd} alt="Cover" />
+        <div>
+          <span>Album</span>
+          <small>Title</small>
+        </div>
+      </Current>
+    )}
 
     <Progress>
       <Controls>
         <button>
           <img src={shuffle} alt="shuffle" />
         </button>
-        <button>
-          <img src={play} alt="play" />
+        <button onClick={play}>
+          <img src={playIcon} alt="play" />
         </button>
-        <button>
-          <img src={pause} alt="pause" />
+        <button onClick={pause}>
+          <img src={pauseIcon} alt="pause" />
         </button>
         <button>
           <img src={backward} alt="backward" />
@@ -92,4 +102,10 @@ const mapStateToProps = state => ({
   player: state.player
 })
 
-export default connect(mapStateToProps)(Player)
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(PlayerActions, dispatch)
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Player)

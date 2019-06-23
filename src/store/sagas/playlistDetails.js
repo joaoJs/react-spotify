@@ -7,8 +7,8 @@ export function* getPlaylistDetails(action) {
     const response = yield call(
       api.get,
       `/playlists/${action.payload.id}?_embed=songs`
-    ) // ?_embed=songs
-    console.log('=======')
+    )
+    console.log('======')
     console.log(response)
     yield put({ type: PlaylistDetailsTypes.GET_SUCCESS, payload: response })
   } catch (error) {

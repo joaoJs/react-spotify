@@ -1,9 +1,9 @@
 import Sound from 'react-sound'
-import { tsExpressionWithTypeArguments } from '@babel/types'
-import { types } from '@babel/core'
 
 export const Types = {
-  LOAD: 'player/LOAD'
+  LOAD: 'player/LOAD',
+  PLAY: 'player/PLAY',
+  PAUSE: 'player/PAUSE'
 }
 
 const INITIAL_STATE = {
@@ -19,6 +19,17 @@ export default function player(state = INITIAL_STATE, action) {
         currentSong: action.payload.song,
         status: Sound.status.PLAYING
       }
+    case Types.PLAY:
+      return {
+        ...state,
+        status: Sound.status.PLAYING
+      }
+    case Types.PAUSE:
+      console.log('paused')
+      return {
+        ...state,
+        status: Sound.status.PAUSED
+      }
     default:
       return state
   }
@@ -28,5 +39,7 @@ export const Creators = {
   loadSong: song => ({
     type: Types.LOAD,
     payload: { song }
-  })
+  }),
+  play: () => ({ type: Types.PLAY }),
+  pause: () => ({ type: Types.PAUSE })
 }

@@ -13,7 +13,6 @@ class Playlist extends Component {
   }
 
   componentDidMount() {
-    console.log('loading playlist component')
     this.loadPlaylistDetails()
   }
 
@@ -24,25 +23,24 @@ class Playlist extends Component {
   }
 
   loadPlaylistDetails = () => {
-    console.log('inside loadPlaylistDetails')
     const { id } = this.props.match.params
-    console.log(this.props)
     this.props.getPlaylistDetailsRequest(id)
   }
 
   render() {
     return (
       <div>
-        <p>Here</p>
         <h3>{this.props.playlistDetails.data.title}</h3>
         <SongItem
           key={1}
           onClick={() => this.setState({ selectedSong: 1 })}
-          onDoubleClick={() => this.props.loadSong({})}
+          onDoubleClick={() =>
+            this.props.loadSong(this.props.playlistDetails.data.songs[0])
+          }
           selected={this.state.selectedSong === 1}
           playing={this.props.currentSong && this.state.selectedSong === 1}
         >
-          <p>PlaySong</p>
+          <p>Play song</p>
         </SongItem>
       </div>
     )
